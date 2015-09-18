@@ -1,0 +1,1 @@
+The second heuristic calculates the diagonal distance to the target square instead of the Manhattan distance. This resulted in a slightly worse path for World1.txt, but the same path for World2.txt as the Manhattan distance heuristic did.
