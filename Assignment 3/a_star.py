@@ -2,7 +2,6 @@ import math
 
 
 #record of the path
-path = list()
 openList = list()
 closedList = list()
 
