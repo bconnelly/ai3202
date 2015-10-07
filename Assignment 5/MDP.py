@@ -129,6 +129,7 @@ def UtilCalc(worldList, tile):
 	return abs(oldUtil - newUtil)
 
 def pathGenerator(epsilon, worldList):
+	epsilon = float(epsilon)
 	delta = epsilon+1
 	i = 0
 	while(delta >= epsilon*(1-gamma)/gamma):
@@ -179,8 +180,10 @@ def printPath(worldList):
 def main():
 	#worldFile = raw_input("Enter the name of the file to read\n")
 	#store the text of the world in a 2d list
-	worldList = getWorld('World1MDP.txt')
-	pathGenerator(.5, worldList)
+	filename = raw_input("Enter the filename for the maze\n")
+	worldList = getWorld(filename)
+	epsilon = raw_input("Enter the epsilon value\n")
+	pathGenerator(epsilon, worldList)
 	printPath(worldList)
 
 

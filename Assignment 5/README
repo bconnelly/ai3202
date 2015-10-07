@@ -1,0 +1,1 @@
+No matter what value of epsilon I used, there seemed to be no difference in the path produced. I tried 0.5, 0.1, 0.00001, and 100. However, the utility values did change with different epsilon values.
