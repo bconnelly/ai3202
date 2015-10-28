@@ -102,25 +102,25 @@ def calcMarginal(network, arg):
 	else:
 		print('Unknown argument, cannot compute marginal')
 
-def calcJointDist(network, arg):
-	probs = {}
-	for var in arg:
-		probs[var] = calcJointProb(network, var)
-	return probs
+# def calcJointDist(network, arg):
+# 	probs = {}
+# 	for var in arg:
+# 		probs[var] = calcJointProb(network, var)
+# 	return probs
 
-def calcJointProb(network, arg):
-	prob = 1
-	length = len(arg)
-	i = 0
-	while(i < length):
-		if arg[i] == '~':
-			i += 1
-			newArg = '~' + arg[i]
-			prob = prob * calcCond(network, newArg, arg[i+1:])[1]
-		else:
-			prob = prob * calcCond(network, arg[i], arg[i+1:])[1]
-		i += 1
-	return prob
+# def calcJointProb(network, arg):
+# 	prob = 1
+# 	length = len(arg)
+# 	i = 0
+# 	while(i < length):
+# 		if arg[i] == '~':
+# 			i += 1
+# 			newArg = '~' + arg[i]
+# 			prob = prob * calcCond(network, newArg, arg[i+1:])[1]
+# 		else:
+# 			prob = prob * calcCond(network, arg[i], arg[i+1:])[1]
+# 		i += 1
+# 	return prob
 
 def calcCond(network, arg, cond):
 	#variable used to remember if "~" was used
@@ -212,7 +212,7 @@ def main():
 			#make sure the return was valid
 			if(conditional == (None, None)):
 				continue
-			print(str(conditional[0]) + ' conditional probability: ' + str(conditional[1]))
+			print('Conditional Probability of ' + str(conditional[0]) + ': ' + str(conditional[1]))
 			#calcCond(a[:p], a[p+1:])
 		elif o in ("-j"):
 			# print "flag", o
